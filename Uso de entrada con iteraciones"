@@ -1,0 +1,64 @@
+   public class Program
+   {
+      public static void Main(string[] args)
+      {
+         int n;
+         int resp = 'S';
+
+
+
+         Console.WriteLine("==================================");
+         Console.WriteLine("Uso de entrada con iteraciones");
+         Console.WriteLine("==================================");
+         Console.WriteLine();
+         do
+         {  
+            // Pide al usuario un numero, iteraciona con S/N
+            Console.Write("Desea ingresar otro numero (S= Si/ N= No): ");
+            resp = char.Parse(Console.ReadLine());
+
+         if (resp == 'N' || resp == 'n')
+
+         {
+            break;
+         }
+
+
+            Console.Write("Ingrese el numero: ");
+            n = int.Parse(Console.ReadLine());
+         
+         } while (resp == 'S' || resp == 's');
+
+
+            // Uso de centinela 
+            Console.WriteLine(); 
+            Console.WriteLine("Uso de centinela");
+            Console.WriteLine();
+
+         do
+         {
+            Console.Write("Ingrese un numero - (Digite -99 para finalizar): ");
+            n = int.Parse(Console.ReadLine());
+
+         } while (n != -99);
+
+            // Uso de bandera
+
+            bool bandera = false;
+
+            Console.WriteLine();
+            Console.WriteLine("Uso de Bandera");
+            Console.WriteLine();
+
+         do
+         {            
+            Console.Write("Ingrese un numero positivo: ");
+            n = int.Parse(Console.ReadLine());
+          
+            if (n <= 0)
+            bandera = true;
+
+         } while (bandera == false);
+      }
+   }
+
