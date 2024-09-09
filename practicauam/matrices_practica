@@ -1,0 +1,43 @@
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        int filas, nFilas, col, nCol;
+
+        Console.WriteLine("Lista de Elementos de la Matriz: ");
+
+        Console.Write("Ingrese la cantidad de filas: ");
+        nFilas = int.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese la cantidad de columnas: ");
+        nCol = int.Parse(Console.ReadLine());
+
+        int[,] matriz = new int[nFilas, nCol];
+
+        Console.WriteLine("Ingreso de datos: ");
+
+        for (filas = 0; filas < nFilas; filas++)
+        {
+            for (col = 0; col < nCol; col++)
+            {
+                Console.Write("Matriz [" + filas + "," + col + "] = ");
+                matriz[filas, col] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        Console.WriteLine("Impresion de datos: ");
+       Console.WriteLine();
+        for (filas = 0; filas < nFilas; filas++)
+        {
+            for (col = 0; col < nCol; col++)
+            {
+                Console.Write("[" +matriz[filas, col] + "]");
+            }
+            Console.WriteLine() ;
+        }
+        Console.WriteLine();
+        Console.ReadKey();
+    }
+
+}
+
