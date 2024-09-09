@@ -1,0 +1,33 @@
+   public class Program
+    {
+    public static void Main(string[] args)
+        {
+
+        int i;
+        int nElementos;
+
+        Console.WriteLine("Lista de elementos del arreglo");
+        Console.WriteLine("Ingrese la cantidad de elementos del arreglo");
+        nElementos = int.Parse(Console.ReadLine());
+
+        int[] arreglo = new int[nElementos];
+
+        Console.WriteLine("Ingreso de Datos");
+        for (i = 0; i < nElementos; i++)
+        {
+            Console.Write("Arreglo[" + i + "] = ");
+            arreglo[i] = int.Parse(Console.ReadLine());
+        }
+
+        Console.WriteLine("Impresion de los Datos");
+        for (i = 0; i < nElementos; i++)
+        {
+            Console.WriteLine("Arreglo: " + arreglo[i] );
+
+        }
+        Console.WriteLine();
+        Console.ReadKey();
+
+    }
+}
+
