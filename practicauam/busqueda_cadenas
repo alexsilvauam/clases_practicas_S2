@@ -1,0 +1,31 @@
+using System;
+
+class cadenas
+{
+   static void Main()
+   {
+      string[] cadenas = { "Julio", "Ana", "Luis", "Pedro", "Maria" };
+      Console.WriteLine("Ingresa las cadenas");
+      string busqueda = Console.ReadLine();
+
+      int posicion = -1;
+      
+      for (int i = 0; i < cadenas.Length; i++)
+      {
+         if (cadenas[i] == busqueda) 
+         {
+            posicion = i;
+            break;
+         }
+      }
+
+      if (posicion != -1) 
+      {
+         Console.WriteLine($"La cadena ({busqueda}) fue encontrada en la posicion ({posicion}). ");
+      }
+      else
+      {
+         Console.WriteLine($"La cadena ({busqueda}) no fue encontrada.");
+      }
+   }
+}
