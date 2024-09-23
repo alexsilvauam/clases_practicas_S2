@@ -1,0 +1,48 @@
+using System;
+using System.IO;
+
+public class Program
+   {
+      public static void Main(string[] args)
+      {
+         string rutaArchivo;
+         string texto;
+         string contenido;
+
+         rutaArchivo = "archivo.txt";
+
+         Console.WriteLine("Ingrese el texto a escribir: ");
+         texto = Console.ReadLine();
+         Console.ReadKey();
+         Console.Clear();
+
+         FileStream FS = new FileStream(rutaArchivo, FileMode.Create);
+         StreamWriter write = new StreamWriter(FS);
+         write.WriteLine(texto);
+
+         write.Close();
+         FS.Close();
+
+         if (File.Exists(rutaArchivo))
+         {
+            FileStream FSRead = new FileStream(rutaArchivo, FileMode.Open);
+            StreamReader read = new StreamReader(FSRead);
+            contenido = read.ReadToEnd();
+
+            read.Close();
+            FSRead.Close();
+
+
+           Console.WriteLine("\nEl contenido del archivo es: ");
+           Console.WriteLine(contenido);
+         }
+
+         else
+         {
+            Console.Write("El archivo no existe");
+         }
+   }
+}
+
+
+
