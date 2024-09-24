@@ -1,0 +1,75 @@
+using System;
+class VentaElectrodomesticos 
+{ 
+    public struct Fecha
+    {
+        public int Dia;
+        public int Mes;
+        public int Año;
+   
+        public Fecha (int dia, int mes, int año)
+        {
+        Dia = dia;
+        Mes = mes;
+        Año = año;
+        }
+    }
+    public struct Producto
+    {
+        public string Nombre;
+        public double Precio;
+        public int Cantidad;
+        public Fecha FechaVenta;
+   
+        public Producto (string nombre, double precio, int cantidad, Fecha fechaVenta)
+        {
+        Nombre = nombre;
+        Precio = precio;
+        Cantidad = cantidad;
+        FechaVenta = fechaVenta;
+        }
+    }
+   internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            Producto[] productos = new Producto[2];
+
+            for (int i = 0; i < productos.Length; i++)
+            {
+                Console.WriteLine("Ingrese el nombre del producto: ");
+                string nombre = Console.ReadLine();
+                Console.WriteLine("Ingrese el precio del producto: ");
+                double precio = double.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese la cantidad del producto: ");
+                int cantidad = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el dia de la venta: (dd)");
+                int dia = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el mes de la venta: (mm)");
+                int mes = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el año de la venta: (yyyy)");
+                int año = int.Parse(Console.ReadLine());
+
+                Fecha fechaVenta = new Fecha(dia, mes, año);
+                productos[i] = new Producto(nombre, precio, cantidad, fechaVenta);
+            }
+            Console.WriteLine("Resumen de ventas: ");
+            for (int i = 0;i < productos.Length;i++)
+            {
+                Console.WriteLine("Producto: " + productos[i].Nombre);
+                Console.WriteLine("Precio: " + productos[i].Precio);
+                Console.WriteLine("Cantidad: " + productos[i].Cantidad);
+                double total = productos[i].Precio * productos[i].Cantidad;
+                string formato = total.ToString("{#,##.00}");
+
+                Console.WriteLine("Total: " + formato);
+                Console.WriteLine("Fecha de venta: " + productos[i].FechaVenta.Dia + "/" 
+                    + productos[i].FechaVenta.Mes + "/" + productos[i].FechaVenta.Año);
+
+
+
+
+            }
+        }
+    }
+}
